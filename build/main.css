@@ -1,0 +1,57 @@
+body {
+    font-family: Geneva,Tahoma,Verdana,sans-serif; 
+}
+
+span {
+    display: inline;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 3px;
+}
+
+.list {
+    display: table;
+}
+
+.listElem {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.listButton {
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 10px;
+  border-color: black;
+  border-width: 2px;
+  margin-right: 10px;
+}
+
+.done {
+  background-color: rgb(16, 216, 16);
+  color: white;
+}
+
+.notDone {
+  background-color: white;
+  color: black;
+}
+
+.addButton {
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+.inputField {
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
