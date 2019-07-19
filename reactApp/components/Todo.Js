@@ -10,11 +10,11 @@ class Todo extends React.Component {
       <li>
         {this.props.task.completed ? (
           <div className="listElem">
-            <button className="listButton done" />
+            <button className="listButton done" onClick={()=>this.props.toggleLevel2()}></button>
           </div>
         ) : (
           <div className="listElem">
-            <button className="listButton notDone" />
+            <button className="listButton notDone" onClick={()=>this.props.toggleLevel2()}></button>
           </div>
         )}
 
@@ -25,6 +25,10 @@ class Todo extends React.Component {
         ) : (
           <div className="listElem">{this.props.task.taskText}</div>
         )}
+
+        <div className="listElem">
+          <button className="deleteButton" onClick={()=>this.props.xClick()}>x</button>
+        </div>
       </li>
     );
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import TodoList from './TodoList';
-import InputLine from './InputLine';
+import TodoList from "./TodoList";
+import InputLine from "./InputLine";
 
 let dummyData = [
   {
@@ -28,12 +28,26 @@ class TodoApp extends React.Component {
 
   addTodo(task) {
     dummyData.push({
-        taskText: task,
-        completed: false
-    })
+      taskText: task,
+      completed: false
+    });
     this.setState({
-        todos: dummyData
-    })
+      todos: dummyData
+    });
+  }
+
+  removeTodo(index) {
+    dummyData.splice(index, 1);
+    this.setState({
+      todos: dummyData
+    });
+  }
+
+  toggleTodo(index) {
+    dummyData[index].completed = !dummyData[index].completed;
+    this.setState({
+      todos: dummyData
+    });
   }
 
   componentDidMount() {
@@ -45,8 +59,12 @@ class TodoApp extends React.Component {
   render() {
     return (
       <div>
-        <InputLine submit={(task) => this.addTodo(task)}/>
-        <TodoList todos={this.state.todos} />
+        <InputLine submit={task => this.addTodo(task)} />
+        <TodoList
+          todos={this.state.todos}
+          todoXClick={index => this.removeTodo(index)}
+          toggleLevel1={index => this.toggleTodo(index)}
+        />
       </div>
     );
   }

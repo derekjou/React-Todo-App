@@ -28,11 +28,11 @@ class InputLine extends React.Component {
         <input className="inputField" 
                 type="text" 
                 placeholder="Task" 
-                onChange={(event)=> this.handleTyping(event)} />
+                onChange={(event)=> this.handleTyping(event)} 
+                value={this.state.typedText}/>
         <button className="addButton" 
                 type="submit" 
-                onClick={(event)=>this.handleSubmit(event)} 
-                value={this.state.typedText}>
+                onClick={(event)=>this.handleSubmit(event)} >
           Add Todo
         </button>
       </form>

@@ -1,9 +1,9 @@
 body {
-    font-family: Geneva,Tahoma,Verdana,sans-serif; 
+  font-family: Geneva, Tahoma, Verdana, sans-serif;
 }
 
 span {
-    display: inline;
+  display: inline;
 }
 
 ul {
@@ -15,7 +15,7 @@ li {
 }
 
 .list {
-    display: table;
+  display: table;
 }
 
 .listElem {
@@ -25,7 +25,7 @@ li {
 
 .listButton {
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 50%;
   font-size: 10px;
   border-color: black;
   border-width: 2px;
@@ -33,7 +33,7 @@ li {
 }
 
 .done {
-  background-color: rgb(16, 216, 16);
+  background-color: rgb(228, 228, 38);
   color: white;
 }
 
@@ -54,4 +54,9 @@ li {
   border-radius: 4px;
   padding: 12px 20px;
   margin: 8px 0;
+}
+
+.deleteButton {
+    background-color: white;
+    border-color: white;
 }

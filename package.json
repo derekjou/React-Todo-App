@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon ./backend/server.js",
     "dev": "webpack-dev-server --content-base build/",
     "webpack": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.6.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
