@@ -26,6 +26,7 @@ class InputLine extends React.Component {
     return (
       <form>
         <input className="inputField" 
+                name="task"
                 type="text" 
                 placeholder="Task" 
                 onChange={(event)=> this.handleTyping(event)} 

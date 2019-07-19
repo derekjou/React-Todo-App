@@ -2,18 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import TodoList from "./TodoList";
 import InputLine from "./InputLine";
+import axios from "axios";
+
+const dbUrl = "http://localhost:3000/db";
 
 let dummyData = [
   {
-    taskText: "cry",
+    task: "cry",
     completed: false
   },
   {
-    taskText: "sleep",
+    task: "sleep",
     completed: false
   },
   {
-    taskText: "repeat",
+    task: "repeat",
     completed: true
   }
 ];
@@ -27,13 +30,26 @@ class TodoApp extends React.Component {
   }
 
   addTodo(task) {
-    dummyData.push({
-      taskText: task,
-      completed: false
-    });
-    this.setState({
-      todos: dummyData
-    });
+    let self = this;
+    axios
+      .post(dbUrl + "/add", {
+        task: task,
+        completed: false
+      })
+      .then(function(response) {
+        self.setState({ todos: self.state.todos.concat({task: response.data.task, completed: response.data.completed})});
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+    // dummyData.push({
+    //   taskText: task,
+    //   completed: false
+    // });
+    // this.setState({
+    //   todos: dummyData
+    // });
   }
 
   removeTodo(index) {

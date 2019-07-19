@@ -20,10 +20,10 @@ class Todo extends React.Component {
 
         {this.props.task.completed ? (
           <div className="listElem">
-            <strike>{this.props.task.taskText}</strike>
+            <strike>{this.props.task.task}</strike>
           </div>
         ) : (
-          <div className="listElem">{this.props.task.taskText}</div>
+          <div className="listElem">{this.props.task.task}</div>
         )}
 
         <div className="listElem">
